@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Webpack App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      .root {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+      }
+      .list {
+        width: 20%;
+        height: 100%;
+        max-width: 20rem;
+        background: #dfdfdf;
+      }
+      .list ul {
+        list-style: none;
+        padding: 1rem;
+      }
+      .list li {
+        display: flex;
+        /* justify-content: center; */
+        align-items: center;
+      }
+      .list li:hover {
+        background: #fff;
+      }
+      .list a {
+        border: none;
+        outline: none;
+        text-decoration: none;
+        width: 100%;
+        height: 100%;
+        padding: 1rem;
+      }
+      .view {
+        flex: 1;
+      }
+      .view iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+        padding: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="root">
+      <div class="list">
+        <ul>
+          <% htmlWebpackPlugin.options.templateParameters.forEach(function(p,i)
+          { %>
+          <li>
+            <a target="demoContent" href="<%=p.name + '.html'%>"
+              ><%=p.name %></a
+            >
+          </li>
+          <% })%>
+        </ul>
+      </div>
+      <div class="view">
+        <iframe name="demoContent"></iframe>
+      </div>
+    </div>
+  </body>
+</html>
