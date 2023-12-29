@@ -1,1 +1,1 @@
-# webpack-typescript-Libraries-template
+# Webpack Typescript Libraries Template
